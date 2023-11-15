@@ -43,6 +43,7 @@ void free_array(char **arr)
 void free_c(char ***args, char **input, char *dir, int alert)
 {
 	(void)input;
+
 	if (alert)
 	{
 		free(dir);

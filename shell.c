@@ -10,11 +10,10 @@ int main(void)
 {
 	size_t length;
 	ssize_t input_length;
-	char *input, **args;
+	char *input = NULL, **args;
 	int counter, index;
 
 	length = 0;
-	*input = NULL;
 	counter = 0;
 	while (1)
 	{

@@ -67,13 +67,10 @@ int empty_checker(char *input)
 char **parse_args(char *input)
 {
 	int i, count;
-	char *arg, *tmp, **args, d[] = " \n\t";
+	char *arg = NULL, *tmp = NULL, **args = NULL, d[] = " \n\t";
 
 	i = 0;
 	count = 0;
-	*arg = NULL;
-	*tmp = NULL;
-	**args = NULL;
 	if (!input)
 	{
 		return (NULL);
@@ -120,19 +117,25 @@ int cd_checker(char ***args, char **input, int index)
 	sts = -1;
 	alert = 0;
 	if (args && (*args) && (*args)[0] && _strcmp((*args)[0], "cd") != 0)
+	{
 		return (sts);
+	}
 	dir = (*args)[1];
 	if (dir == NULL)
 	{
 		dir = getenv("HOME");
 		if (dir == NULL)
+		{
 			dir = getcwd(NULL, 0), alert = 1;
+		}
 	}
 	else if (_strcmp(dir, "-") == 0)
 	{
 		dir = getenv("OLDPWD");
 		if (dir == NULL)
+		{
 			dir = getcwd(NULL, 0), alert = 1;
+		}
 		printf("%s\n", dir);
 	}
 	currentDir = getcwd(NULL, 0);
@@ -187,7 +190,6 @@ int path_checker(char **args)
 		return (1);
 	}
 	if (_strcmp(args[0], "env") == 0)
-	{}
 	{
 		free(args[0]);
 		args[0] = _str_duplicate("/usr/bin/env");
