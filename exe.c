@@ -1,7 +1,14 @@
 #include "shell.h"
 
 
-
+/**
+ * execution - Concatenates two strings
+ *
+ * @args: the arguments
+ * @input: input
+ *
+ * Return: status
+ */
 int execution(char **args, char *input)
 {
 	pid_t pid_;

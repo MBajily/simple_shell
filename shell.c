@@ -1,6 +1,11 @@
 #include "shell.h"
 
 
+/**
+ * main - render the project
+ *
+ * Return: 0
+ */
 int main(void)
 {
 	size_t length;

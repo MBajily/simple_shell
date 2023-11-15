@@ -1,6 +1,14 @@
 #include "shell.h"
 
 
+/**
+ * exit_checker - handle arguments for
+ * the built-in exit
+ *
+ * @index: index
+ * @input: input
+ * @args: arguments
+ */
 void exit_checker(char ***args, char **input, int index)
 {
 	int sts = 128;
@@ -42,7 +50,14 @@ void exit_checker(char ***args, char **input, int index)
 }
 
 
-
+/**
+ * exit_message - handle arguments for
+ * the built-in exit
+ *
+ * @index: index
+ * @input: input
+ * @args: arguments
+ */
 void exit_message(char ***args, char **input, int *index)
 {
 	if (*args != NULL)
@@ -55,6 +70,13 @@ void exit_message(char ***args, char **input, int *index)
 }
 
 
+/**
+ * is_digit - Check if the str is digit
+ *
+ * @str: the string
+ *
+ * Return: 0 or 1
+ */
 int is_digit(char *str)
 {
 	int i;
@@ -73,7 +95,13 @@ int is_digit(char *str)
 	return (1);
 }
 
-
+/**
+ * is_letter - Check if the str is a letter
+ *
+ * @str: the string
+ *
+ * Return: 0 if Null, 1 if not Null
+ */
 int is_letter(char *str)
 {
 	int i;

@@ -4,8 +4,8 @@
 /**
  * _get_line - Read one line of the standar input
  *
- * @**input: input
- * @*length: input length
+ * @input: input
+ * @length: input length
  *
  * Return: input length
  */
@@ -37,7 +37,7 @@ int _get_line(char **input, size_t *length)
 /**
  * empty_checker - Check if is empty
  *
- * @**input: input
+ * @input: input
  *
  * Return: 1 or 0
  */
@@ -58,9 +58,9 @@ int empty_checker(char *input)
 
 
 /**
- * **parse_args - parse arguments
+ * **parse_args - Handle command lines with arguments
  *
- * @**input: input
+ * @input: input
  *
  * Return: Null or args
  */
@@ -107,10 +107,10 @@ char **parse_args(char *input)
  * cd_checker - cd checker
  *
  * @index: index
- * @**input: input
- * @***args: arguments
+ * @input: input
+ * @args: arguments
  *
- * Return: status 
+ * Return: status
  */
 int cd_checker(char ***args, char **input, int index)
 {
@@ -157,7 +157,15 @@ int cd_checker(char ***args, char **input, int index)
 }
 
 
-
+/**
+ * path_checker - Handle the PATH
+ *
+ * @index: index
+ * @input: input
+ * @args: arguments
+ *
+ * Return: status
+ */
 int path_checker(char **args)
 {
 	char *dir, *path, *copied_path;

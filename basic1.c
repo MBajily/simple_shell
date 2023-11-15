@@ -1,6 +1,13 @@
 #include "shell.h"
 
 
+/**
+ * free_array - Frees the memory for directories
+ *
+ * @arr: the array
+ *
+ * Return: Null
+ */
 void free_array(char **arr)
 {
 	int i, r;
@@ -23,7 +30,16 @@ void free_array(char **arr)
 }
 
 
-
+/**
+ * free_c - Frees the memory for com
+ *
+ * @dir: the directory
+ * @input: input
+ * @args: arguments
+ * @alert: an allert
+ *
+ * Return: Null
+ */
 void free_c(char ***args, char **input, char *dir, int alert)
 {
 	(void)input;
@@ -35,6 +51,13 @@ void free_c(char ***args, char **input, char *dir, int alert)
 }
 
 
+/**
+ * _str_length - Frees the memory for com
+ *
+ * @str: string
+ *
+ * Return: the length of string
+ */
 size_t _str_length(const char *str)
 {
 	size_t len;
@@ -48,6 +71,12 @@ size_t _str_length(const char *str)
 }
 
 
+/**
+ * _str_copy - copy the string
+ *
+ * @dest: destination direct
+ * @src: source direct
+ */
 void _str_copy(char *dest, const char *src)
 {
 	int i = 0;
@@ -61,6 +90,13 @@ void _str_copy(char *dest, const char *src)
 }
 
 
+/**
+ * *_str_duplicate - copy the string
+ *
+ * @str: string
+ *
+ * Return: new_string, Null if the str is null,
+ */
 char *_str_duplicate(const char *str)
 {
 	size_t len;
