@@ -46,14 +46,13 @@ int empty_checker(char *input)
 char **parse_args(char *input)
 {
 	int i, count;
-	char *arg, *tmp, **args, d[];
+	char *arg, *tmp, **args, d[] = " \n\t";
 
 	i = 0;
 	count = 0;
 	*arg = NULL;
 	*tmp = NULL;
 	**args = NULL;
-	d[] = " \n\t";
 	if (!input)
 	{
 		return (NULL);
