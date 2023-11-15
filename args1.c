@@ -1,6 +1,14 @@
 #include "shell.h"
 
 
+/**
+ * _get_line - Read one line of the standar input
+ *
+ * @**input: input
+ * @*length: input length
+ *
+ * Return: input length
+ */
 int _get_line(char **input, size_t *length)
 {
 	ssize_t the_length;
@@ -13,7 +21,7 @@ int _get_line(char **input, size_t *length)
 	if ((int)the_length == -1)
 	{
 		free(*input), *input = NULL;
-		exit(0); /* HANDLE CTRL + D */
+		exit(0);
 	}
 	if (the_length > 0)
 	{
@@ -26,7 +34,13 @@ int _get_line(char **input, size_t *length)
 }
 
 
-
+/**
+ * empty_checker - Check if is empty
+ *
+ * @**input: input
+ *
+ * Return: 1 or 0
+ */
 int empty_checker(char *input)
 {
 	int i = 0;
@@ -43,6 +57,13 @@ int empty_checker(char *input)
 }
 
 
+/**
+ * **parse_args - parse arguments
+ *
+ * @**input: input
+ *
+ * Return: Null or args
+ */
 char **parse_args(char *input)
 {
 	int i, count;
@@ -82,6 +103,15 @@ char **parse_args(char *input)
 }
 
 
+/**
+ * cd_checker - cd checker
+ *
+ * @index: index
+ * @**input: input
+ * @***args: arguments
+ *
+ * Return: status 
+ */
 int cd_checker(char ***args, char **input, int index)
 {
 	char *dir, *currentDir;
@@ -90,7 +120,7 @@ int cd_checker(char ***args, char **input, int index)
 	sts = -1;
 	alert = 0;
 	if (args && (*args) && (*args)[0] && _strcmp((*args)[0], "cd") != 0)
-		return (status);
+		return (sts);
 	dir = (*args)[1];
 	if (dir == NULL)
 	{
@@ -114,16 +144,16 @@ int cd_checker(char ***args, char **input, int index)
 	if (chdir(dir) == 0)
 	{
 		setenv("OLDPWD", currentDir, 1);
-		setenv("PWD", dir, 1), status = 1;
+		setenv("PWD", dir, 1), sts = 1;
 	}
 	else
 	{
 		fprintf(stderr, "./hsh: %d: %s: can't cd to %s\n",
 				index, (*args)[0], (*args)[1]);
-		status = 0;
+		sts = 0;
 	}
 	free(currentDir), free_c(args, input, dir, alert);
-	return (status);
+	return (sts);
 }
 
 
