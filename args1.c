@@ -159,8 +159,7 @@ int cd_checker(char ***args, char **input, int index)
  */
 int path_checker(char **args)
 {
-	char *dir, *path, *copied_path;
-	char ppath[1024];
+	char *dir, *path, *copied_path, ppath[1024];
 
 	if (args[1])
 		if (_strcmp(args[0], "hbtn_ls") == 0 &&
