@@ -24,7 +24,7 @@ int _strcmp(const char *str1, const char *str2)
  * _strcat - Concatenates two strings
  *
  * @dest: destination
- * @src: source 
+ * @src: source
  */
 void _strcat(char *dest, const char *src)
 {

@@ -48,9 +48,7 @@ int empty_checker(char *input)
 	while (input[i])
 	{
 		if (input[i] != ' ')
-		{
 			return (0);
-		}
 		i++;
 	}
 	return (1);
@@ -72,9 +70,7 @@ char **parse_args(char *input)
 	i = 0;
 	count = 0;
 	if (!input)
-	{
 		return (NULL);
-	}
 	tmp = _str_duplicate(input);
 	arg = strtok(tmp, d);
 	while (arg != NULL)
@@ -117,25 +113,19 @@ int cd_checker(char ***args, char **input, int index)
 	sts = -1;
 	alert = 0;
 	if (args && (*args) && (*args)[0] && _strcmp((*args)[0], "cd") != 0)
-	{
 		return (sts);
-	}
 	dir = (*args)[1];
 	if (dir == NULL)
 	{
 		dir = getenv("HOME");
 		if (dir == NULL)
-		{
 			dir = getcwd(NULL, 0), alert = 1;
-		}
 	}
 	else if (_strcmp(dir, "-") == 0)
 	{
 		dir = getenv("OLDPWD");
 		if (dir == NULL)
-		{
 			dir = getcwd(NULL, 0), alert = 1;
-		}
 		printf("%s\n", dir);
 	}
 	currentDir = getcwd(NULL, 0);
@@ -163,8 +153,6 @@ int cd_checker(char ***args, char **input, int index)
 /**
  * path_checker - Handle the PATH
  *
- * @index: index
- * @input: input
  * @args: arguments
  *
  * Return: status
@@ -178,18 +166,12 @@ int path_checker(char **args)
 	{
 		if (_strcmp(args[0], "hbtn_ls") == 0 &&
 				_strcmp(args[1], "/var") == 0)
-		{
 			return (1);
-		}
 	}
 	if (_strcmp(args[0], "hbtn_ls") == 0)
-	{
 		return (0);
-	}
 	if (access(args[0], X_OK) == 0)
-	{
 		return (1);
-	}
 	if (_strcmp(args[0], "env") == 0)
 	{
 		free(args[0]);
@@ -198,9 +180,7 @@ int path_checker(char **args)
 	}
 	path = getenv("PATH");
 	if (path == NULL)
-	{
 		return (0);
-	}
 	copied_path = _str_duplicate(path);
 	if (copied_path == NULL)
 	{

@@ -23,27 +23,17 @@ int main(void)
 		{
 			index++;
 			if (input_length == 0)
-			{
 				continue;
-			}
 			if (empty_checker(input))
-			{
 				continue;
-			}
 			args = parse_args(input);
 			if (!args)
-			{
 				continue;
-			}
 			exit_checker(&args, &input, index);
 			if (cd_checker(&args, &input, index) != -1)
-			{
 				continue;
-			}
 			if (!path_checker(args))
-			{
 				exit_message(&args, &input, &counter);
-			}
 			execution(args, input);
 		}
 	}
