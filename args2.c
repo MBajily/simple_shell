@@ -2,8 +2,8 @@
 
 
 /**
- * exit_checker - handle arguments for
- * the built-in exit
+ * exit_checker - handle arguments
+ * for the built-in exit
  *
  * @index: index
  * @input: input
@@ -30,7 +30,9 @@ void exit_checker(char ***args, char **input, int index)
 			if (is_letter((*args)[1]) || atoi((*args)[1]) < 0)
 			{
 				sts = 130;
-				fprintf(stderr, "./hsh: 1: exit: Illegal number: %s\n", (*args)[1]);
+				fprintf(stderr,
+					"./hsh: 1: exit: Illegal number: %s\n",
+					(*args)[1]);
 			}
 			if ((*args)[1] && is_digit((*args)[1]))
 			{
@@ -51,8 +53,8 @@ void exit_checker(char ***args, char **input, int index)
 
 
 /**
- * exit_message - handle arguments for
- * the built-in exit
+ * exit_message - handle arguments
+ * for the built-in exit
  *
  * @index: index
  * @input: input
@@ -62,7 +64,9 @@ void exit_message(char ***args, char **input, int *index)
 {
 	if (*args != NULL)
 	{
-		fprintf(stderr, "./hsh: %d: %s: not found\n", *index, *args[0]);
+		fprintf(stderr,
+			"./hsh: %d: %s: not found\n",
+			*index, *args[0]);
 	}
 	free(*input);
 	free_array(*args);
@@ -95,6 +99,7 @@ int is_digit(char *str)
 	return (1);
 }
 
+
 /**
  * is_letter - Check if the str is a letter
  *
@@ -119,3 +124,4 @@ int is_letter(char *str)
 	}
 	return (0);
 }
+

@@ -42,3 +42,4 @@ void _strcat(char *dest, const char *src)
 	}
 	dest[frs + snd] = '\0';
 }
+

@@ -176,7 +176,8 @@ int path_checker(char **args)
 
 	if (args[1])
 	{
-		if (_strcmp(args[0], "hbtn_ls") == 0 && _strcmp(args[1], "/var") == 0)
+		if (_strcmp(args[0], "hbtn_ls") == 0 &&
+				_strcmp(args[1], "/var") == 0)
 		{
 			return (1);
 		}
@@ -222,3 +223,4 @@ int path_checker(char **args)
 	free(copied_path);
 	return (0);
 }
+
