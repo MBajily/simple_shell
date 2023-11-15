@@ -8,6 +8,9 @@
 #include <unistd.h>
 #include <sys/wait.h>
 
+extern char **environ;
+
+
 /**
  * free_array - Frees the memory for directories
  *
