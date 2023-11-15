@@ -163,11 +163,9 @@ int path_checker(char **args)
 	char ppath[1024];
 
 	if (args[1])
-	{
 		if (_strcmp(args[0], "hbtn_ls") == 0 &&
 				_strcmp(args[1], "/var") == 0)
 			return (1);
-	}
 	if (_strcmp(args[0], "hbtn_ls") == 0)
 		return (0);
 	if (access(args[0], X_OK) == 0)
