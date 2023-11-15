@@ -111,3 +111,4 @@ char *_str_duplicate(const char *str)
 	_str_copy(new_string, str);
 	return (new_string);
 }
+

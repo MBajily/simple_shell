@@ -120,19 +120,25 @@ int cd_checker(char ***args, char **input, int index)
 	sts = -1;
 	alert = 0;
 	if (args && (*args) && (*args)[0] && _strcmp((*args)[0], "cd") != 0)
+	{
 		return (sts);
+	}
 	dir = (*args)[1];
 	if (dir == NULL)
 	{
 		dir = getenv("HOME");
 		if (dir == NULL)
+		{
 			dir = getcwd(NULL, 0), alert = 1;
+		}
 	}
 	else if (_strcmp(dir, "-") == 0)
 	{
 		dir = getenv("OLDPWD");
 		if (dir == NULL)
+		{
 			dir = getcwd(NULL, 0), alert = 1;
+		}
 		printf("%s\n", dir);
 	}
 	currentDir = getcwd(NULL, 0);
@@ -173,7 +179,8 @@ int path_checker(char **args)
 
 	if (args[1])
 	{
-		if (_strcmp(args[0], "hbtn_ls") == 0 && _strcmp(args[1], "/var") == 0)
+		if (_strcmp(args[0], "hbtn_ls") == 0 &&
+				_strcmp(args[1], "/var") == 0)
 		{
 			return (1);
 		}
@@ -187,7 +194,6 @@ int path_checker(char **args)
 		return (1);
 	}
 	if (_strcmp(args[0], "env") == 0)
-	{}
 	{
 		free(args[0]);
 		args[0] = _str_duplicate("/usr/bin/env");
@@ -220,3 +226,4 @@ int path_checker(char **args)
 	free(copied_path);
 	return (0);
 }
+

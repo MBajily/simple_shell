@@ -2,7 +2,8 @@
 
 
 /**
- * execution - Concatenates two strings
+ * execution - Execute a command with
+ * its entire path
  *
  * @args: the arguments
  * @input: input
@@ -37,3 +38,4 @@ int execution(char **args, char *input)
 	}
 	return (sts);
 }
+
